@@ -64,15 +64,23 @@ const promises = {
     },
     /**
      * Same example this time with async
+     * 
+     * Note: You chain the .then on the original promise not on an instance of the promise
+     * As in:
+     * p.then()
+     * p.then()
+     * 
+     * Refer to here as to why that is wrong: https://javascript.info/promise-chaining
      */
     ex2(){
         let p = new Promise(function(resolve, reject){
             setTimeout(() => {
-                
+                resolve('a');
             }, 3000);
         })
         .then(
             function(resolvedValue){
+                // Notice here that only when resolve is called, does the next then is called
                 console.log(resolvedValue);
             }
         );
@@ -81,4 +89,5 @@ const promises = {
 
 // Run exmaples below
 // scaryCallback();
-promises.ex1();
+// promises.ex1();
+promises.ex2();
