@@ -84,6 +84,14 @@ const promises = {
                 console.log(resolvedValue);
             }
         );
+    },
+    /**
+     * For this example we will be looking at how reject skips .then because there is an error
+     * 
+     * The rationale 
+     */
+    ex3(){
+
     }
 };
 
