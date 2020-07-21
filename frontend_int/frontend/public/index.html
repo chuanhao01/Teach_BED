@@ -12,6 +12,7 @@
         // Setting base url
         const baseUrl = 'http://localhost:3000';
 
+        // Basic request
         axios
         .get(baseUrl+'/basic')
         .then(
@@ -27,6 +28,37 @@
                 console.log(err);
             }
         );
+        
+        // Basic error
+        axios
+        .get(baseUrl+'/basic/error')
+        .then(
+            function(res){
+                return;
+            }
+        )
+        .catch(
+            function(err){
+                console.log(err);
+            }
+        );
+
+        // Basic Post request
+        axios
+        .post(`${baseUrl}/basic/post`, {
+            'Testing Post': 'Request'
+        })
+        .then(
+            function(res){
+                console.log(res.data);
+            }
+        )
+        .catch(
+            function(err){
+                console.log(err);
+            }
+        )
+
     </script>
 </body>
 </html>
