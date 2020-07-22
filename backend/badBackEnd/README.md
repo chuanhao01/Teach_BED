@@ -22,3 +22,12 @@ There is also the downside of moving the controller APIs code into the root dir 
 
 Therefore, there really is no downside in moving the `app.js` code into the `server.js` file, as this code should be in the root dir of the project anyway.  
 
+### 3. `config.js` vs `databaseConfig.js`
+This in hindsight, is fine, as for the developer, he would know that `config.js` is the server config file, while the `databaseConfig.js` is for the database.  
+However, it is quite weird to have your application config in multiple locations at once. This makes setting up and configuring them a pain in multiple locations.  
+We also are not able to see all the configs at once, which may lead to accidents, but that is a minor point.  
+
+Also with these being `js` files, its easy to accidently commit them in version control. These configs are also stored in plain text.  
+
+
+
